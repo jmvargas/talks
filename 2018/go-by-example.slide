@@ -6,6 +6,14 @@ Jesús Manuel Vargas
 Offer Discovery team, Privalia
 htpp://jesusvargas.me
 
+* To follow this talk in your laptop...
+
+Execute this
+
+    docker run --rm -p 3999:3999 -p 8080:8080 jesusmvargas91/talks
+
+And next visit [[http://localhost:3999][http://localhost:3999]]
+
 * Who I am?
 - Full stack developer, curious, always learning...
 - Interests: Go, Docker, PHP, Deep Learning, Performance, Microservices...
