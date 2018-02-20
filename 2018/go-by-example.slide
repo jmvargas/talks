@@ -1,0 +1,142 @@
+Go by example
+XX Feb 2018
+Tags: go golang example
+
+Jesús Manuel Vargas
+Offer Discovery team, Privalia
+htpp://jesusvargas.me
+
+* Who I am?
+- Full stack developer, curious, always learning...
+- Interests: Go, Docker, PHP, Deep Learning, Performance, Microservices...
+- Sevillano, Andaluz
+- In Privalia since one year
+.image go-by-example/images/morning-coffee-3x.gif _ 300
+
+* Goal of this talk
+
+To show you:
+- How powerful is Go
+- What I like of it
+ ...and maybe you will find this useful also for you
+.image go-by-example/images/gotham-3x.png _ 300
+
+* (A very) Short introduction to Go
+
+* It's popular
+
+.image go-by-example/images/poll_results.png _ 900
+
+* Main features
+- Focused in concurrency & performance
+- Good learning curve, ridiculous simply
+- Work in all OS
+- Strong typed
+- Source code writed in Go
+- Awesome std lib & lots of tools
+- Fast compilation
+.image go-by-example/images/dancing.gif _ 160
+
+* Who made it?
+Designed by people like:
+- Rob Pike, co-creator of UTF-8
+- Ken Thompson, co-creator of UNIX
+- Robert Griesemer, worked in  Google's V8 JavaScript engine
+.image go-by-example/images/knight.svg _ 300
+
+* How are this talk is structured?
+
+I'll present Go features example by example
+
+I'll try to avoid any external library. 
+
+Please don't focus on syntax. Better keep with concepts.
+
+* #1 Do you ever deal with many string encoding formats?
+
+* Go is UTF-8 by default
+
+.play go-by-example/utf8-by-default/main.go
+
+_Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
+
+* #2 Hello world HTTP server
+
+* Hello world HTTP server (without external libs)
+
+.play go-by-example/hello-world-http/main.go
+
+* #3 Checks before compilation
+
+* What about if you declare a var and you don't use it
+
+.play go-by-example/checks-before/main.go
+
+* #4 Error handling
+
+* Error handling
+
+.play go-by-example/error-handling/main.go /START OMIT/,/END OMIT/
+
+* #5 Testing
+
+* We have this server
+
+.play go-by-example/testing/main.go
+
+* And we have these tests
+.code go-by-example/testing/main_test.go /^func TestHandler/,/^}/
+
+* #6 Benchmarks
+
+* Benchmarks: Pretty similar to tests
+
+.code go-by-example/testing/main_test.go /^func BenchmarkHandler/,/^}/
+
+* #7 Ridiculous minimal Docker images
+
+* It plays well with Docker
+
+.code go-by-example/minimal-docker-images/Dockerfile
+.code go-by-example/minimal-docker-images/build.sh
+.image go-by-example/images/hugging-docker.svg _ 180 
+
+* #8 Serialization/Deserialization
+
+* Serialization to JSON
+
+.play go-by-example/serialization/serialization.go /START OMIT/,/END OMIT/
+
+* Deserialization from JSON
+
+.play go-by-example/serialization/deserialization.go /START OMIT/,/END OMIT/
+
+* #9 Concurrency: Goroutines
+
+* Hello world Goroutines
+
+.play go-by-example/concurrency/101.go /START OMIT/,/END OMIT/
+
+* Question: What happen if I click run?
+
+.play go-by-example/concurrency/102.go
+
+* #10 Concurrency: Even better with channels
+
+* Diagram
+- Workers can't take the same job twice
+.image go-by-example/images/worker-job.svg _ 1000
+
+* Worker-Job example: Channels & Goroutines allows concurrency
+
+.play go-by-example/concurrency/103.go /START OMIT/,/END OMIT/
+
+* What's next?
+
+.link https://tour.golang.org/welcome/1 Start Golang tour
+.link https://www.youtube.com/watch?v=uBjoTxosSys Go tooling in action by Francesc Campoy
+.link https://www.youtube.com/watch?v=0NTKMKDsCTE&list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ&index=28 Francesc Campoy's just for func video series
+.link https://www.amazon.es/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440 _The_Go_Programming_Language_ by Alan Donovan & [[https://en.wikipedia.org/wiki/Brian_Kernighan][Brian Kernighan]]
+.link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'
+.link http://divan.github.io/posts/go_concurrency_visualize/ Visualizing Concurrency in Go
+.image go-by-example/images/demo.gif _ 900

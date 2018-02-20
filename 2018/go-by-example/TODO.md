@@ -1,0 +1,19 @@
+- Concurrent workers pool processing jobs
+- *Testing*
+- *Benchmark*
+- Profiler
+- *Minimal docker image*
+- *Returning multiple values*
+- *Generating binaries for different platforms*
+- Potential doing concurrency
+- Channels 1: simple example
+- Channels 2: fibonacci generator
+- Channels & concurrency
+- Basic concurrency 1 doing a task simple
+- Basic concurrency 2 goroutine without time to be executed
+- *Basic hello world http*
+- *UTF8*
+- *Serialization/deserialization*
+- *Error handling*
+- Go doc
+- C binding
