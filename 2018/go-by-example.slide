@@ -1,5 +1,5 @@
 Go by example
-XX Feb 2018
+22 March 2018
 Tags: go golang example
 
 Jesús Manuel Vargas
@@ -36,9 +36,9 @@ To show you:
 .image go-by-example/images/poll_results.png _ 900
 
 * Main features
-- Focused in concurrency & performance
+- Fast, focused in concurrency & performance
 - Good learning curve, ridiculous simply
-- It works on all OS 
+- It works on all OS
 - Strong typed
 - Source code writed in Go
 - Awesome std lib & lots of tools
