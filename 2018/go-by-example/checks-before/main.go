@@ -6,6 +6,6 @@ import (
 
 func main() {
 	// Compilation fails if we have unused variables
-	a := 5
+	a := "Not used"
 	fmt.Printf("Hello!")
 }

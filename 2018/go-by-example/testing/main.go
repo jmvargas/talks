@@ -16,7 +16,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	match := re.FindAllStringSubmatch(r.URL.Path, -1)
 
 	if len(match) > 0 {
-		fmt.Fprintf(w, "Hello %s! 👏😄", match[0][1])
+		fmt.Fprintf(w, "Hello %s! 👋", match[0][1])
 		return
 	}
 	fmt.Fprintf(w, "Sorry, I don't know you")

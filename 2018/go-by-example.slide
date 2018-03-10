@@ -4,7 +4,7 @@ Tags: go golang example
 
 Jesús Manuel Vargas
 Offer Discovery team, Privalia
-htpp://jesusvargas.me
+http://jesusvargas.me
 
 * To follow this talk in your laptop...
 
@@ -38,11 +38,11 @@ To show you:
 * Main features
 - Focused in concurrency & performance
 - Good learning curve, ridiculous simply
-- Work in all OS
+- It works on all OS 
 - Strong typed
 - Source code writed in Go
 - Awesome std lib & lots of tools
-- Fast compilation
+- Fast cross-compilation to machine code
 .image go-by-example/images/dancing.gif _ 160
 
 * Who made it?
@@ -52,7 +52,7 @@ Designed by people like:
 - Robert Griesemer, worked in  Google's V8 JavaScript engine
 .image go-by-example/images/knight.svg _ 300
 
-* How are this talk is structured?
+* How this talk is structured?
 
 I'll present Go features example by example
 
@@ -64,7 +64,7 @@ Please don't focus on syntax. Better keep with concepts.
 
 * Go is UTF-8 by default
 
-.play go-by-example/utf8-by-default/main.go
+.play -edit go-by-example/utf8-by-default/main.go
 
 _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 
@@ -72,25 +72,25 @@ _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 
 * Hello world HTTP server (without external libs)
 
-.play go-by-example/hello-world-http/main.go
+.play -edit go-by-example/hello-world-http/main.go
 
 * #3 Checks before compilation
 
 * What about if you declare a var and you don't use it
 
-.play go-by-example/checks-before/main.go
+.play -edit go-by-example/checks-before/main.go
 
 * #4 Error handling
 
 * Error handling
 
-.play go-by-example/error-handling/main.go /START OMIT/,/END OMIT/
+.play -edit go-by-example/error-handling/main.go /START OMIT/,/END OMIT/
 
 * #5 Testing
 
 * We have this server
 
-.play go-by-example/testing/main.go
+.play -edit go-by-example/testing/main.go
 
 * And we have these tests
 .code go-by-example/testing/main_test.go /^func TestHandler/,/^}/
@@ -113,21 +113,21 @@ _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 
 * Serialization to JSON
 
-.play go-by-example/serialization/serialization.go /START OMIT/,/END OMIT/
+.play -edit go-by-example/serialization/serialization.go /START OMIT/,/END OMIT/
 
 * Deserialization from JSON
 
-.play go-by-example/serialization/deserialization.go /START OMIT/,/END OMIT/
+.play -edit go-by-example/serialization/deserialization.go /START OMIT/,/END OMIT/
 
 * #9 Concurrency: Goroutines
 
 * Hello world Goroutines
 
-.play go-by-example/concurrency/101.go /START OMIT/,/END OMIT/
+.play -edit go-by-example/concurrency/101.go /START OMIT/,/END OMIT/
 
 * Question: What happen if I click run?
 
-.play go-by-example/concurrency/102.go
+.play -edit go-by-example/concurrency/102.go
 
 * #10 Concurrency: Even better with channels
 
@@ -137,7 +137,7 @@ _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 
 * Worker-Job example: Channels & Goroutines allows concurrency
 
-.play go-by-example/concurrency/103.go /START OMIT/,/END OMIT/
+.play -edit go-by-example/concurrency/103.go /START OMIT/,/END OMIT/
 
 * What's next?
 

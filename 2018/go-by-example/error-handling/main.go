@@ -21,11 +21,11 @@ func main() {
 	fmt.Printf("Sqrt of 25 is %g\n", sqrtOf25)
 
 	//Here we aren't sure
-	sqrtOfSomeFunc, err := Sqrt(rand.Float64() - .5)
+	sqrtOfAFloat, err := Sqrt(rand.Float64() - .5)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("Sqrt of SomeFunc is %g\n", sqrtOfSomeFunc)
+	fmt.Printf("Sqrt of aFloat is %g\n", sqrtOfAFloat)
 }
 
 func Sqrt(f float64) (float64, error) {

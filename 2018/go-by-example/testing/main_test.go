@@ -9,7 +9,7 @@ import (
 
 func TestHandler(t *testing.T) {
 	cases := []struct{ in, out string }{
-		{"jesusmanuel.vargas@privalia.com", "Hello jesusmanuel.vargas! 👏😄"},
+		{"jesusmanuel.vargas@privalia.com", "Hello jesusmanuel.vargas! 👋"},
 		{"foo.bar@other.com", "Sorry, I don't know you"},
 	}
 
@@ -44,7 +44,7 @@ func BenchmarkHandler(b *testing.B) {
 		if rec.Code != http.StatusOK {
 			b.Errorf("Unexpected status 200, got %d", rec.Code)
 		}
-		if !strings.Contains(rec.Body.String(), "Hello jesusmanuel.vargas! 👏😄") {
+		if !strings.Contains(rec.Body.String(), "Hello jesusmanuel.vargas! 👋") {
 			b.Errorf("Unexpected body: %s", rec.Body.String())
 		}
 	}
