@@ -13,7 +13,7 @@ func main() {
 }
 
 type User struct {
-	ID   int    `json:"id,omitempty"`
+	Id   int    `json:"id,omitempty"`
 	Name string `json:"name"`
 	Age  int32  `json:"age"`
 }
@@ -28,7 +28,7 @@ func (u *User) canDrinkBeer() (bool, error) {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	user := User{ID: 1, Name: "Jesús", Age: 26}
+	user := User{Id: 1, Name: "Jesús", Age: 26}
 
 	canDrinkBeer, _ := user.canDrinkBeer()
 
