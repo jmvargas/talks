@@ -22,7 +22,7 @@ func TestHandler(t *testing.T) {
 	if rec.Code != http.StatusOK {
 		t.Errorf("Unexpected status 200, got %d", rec.Code)
 	}
-	if !strings.Contains(rec.Body.String(), "Jesús, you can drink beer") {
+	if !strings.Contains(rec.Body.String(), "Jesús, you can drink beer 🍺") {
 		t.Errorf("Unexpected body: %s", rec.Body.String())
 	}
 }
@@ -41,7 +41,7 @@ func TestHandlerFail(t *testing.T) {
 	if rec.Code != http.StatusBadRequest {
 		t.Errorf("Unexpected status 400, got %d", rec.Code)
 	}
-	if !strings.Contains(rec.Body.String(), "Error: age lower than zero") {
+	if !strings.Contains(rec.Body.String(), "Error: age lower than zero 💥") {
 		t.Errorf("Unexpected body: %s", rec.Body.String())
 	}
 }
@@ -61,7 +61,7 @@ func BenchmarkHandler(b *testing.B) {
 		if rec.Code != http.StatusOK {
 			b.Errorf("Unexpected status 200, got %d", rec.Code)
 		}
-		if !strings.Contains(rec.Body.String(), "Jesús, you can drink beer") {
+		if !strings.Contains(rec.Body.String(), "Jesús, you can drink beer 🍺") {
 			b.Errorf("Unexpected body: %s", rec.Body.String())
 		}
 	}

@@ -22,7 +22,7 @@ type User struct {
 
 func (u *User) canDrinkBeer() (bool, error) {
 	if u.Age < 0 {
-		return false, errors.New("Error: age lower than zero")
+		return false, errors.New("Error: age lower than zero 💥")
 	}
 	return u.Age >= 18, nil
 }
@@ -33,9 +33,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	canDrinkBeer, _ := user.canDrinkBeer()
 
 	if canDrinkBeer {
-		fmt.Fprintf(w, "%s, you can drink beer", user.Name)
+		fmt.Fprintf(w, "%s, you can drink beer 🍺", user.Name)
 	} else {
-		fmt.Fprintf(w, "%s, you're so young!", user.Name)
+		fmt.Fprintf(w, "Oops! %s, you should drink water 🚰", user.Name)
 	}
 }
 

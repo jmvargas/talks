@@ -26,7 +26,7 @@ And next visit [[http://localhost:3999][http://localhost:3999]]
 
 To show you:
 - How powerful is Go
-- What I like of it
+- What I like about it based in my own experience
  ...and maybe you will find this useful also for you
 .image go-by-example/images/gotham-3x.png _ 300
 
@@ -171,4 +171,4 @@ _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 .link https://www.amazon.es/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440 _The_Go_Programming_Language_ by Alan Donovan & [[https://en.wikipedia.org/wiki/Brian_Kernighan][Brian Kernighan]]
 .link https://www.youtube.com/watch?v=cN_DpYBzKso Rob Pike - 'Concurrency Is Not Parallelism'
 .link http://divan.github.io/posts/go_concurrency_visualize/ Visualizing Concurrency in Go
-.image go-by-example/images/demo.gif _ 900
+.image go-by-example/images/demo.gif _ 850
