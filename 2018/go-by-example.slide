@@ -17,9 +17,10 @@ And next visit [[http://localhost:3999][http://localhost:3999]]
 * Who I am?
 - Full stack developer, curious, always learning...
 - Interests: Go, Docker, PHP, Deep Learning, Performance, Microservices...
-- Sevillian, andalusian
+- Sevillian, Andalusian
 - In Privalia since one year
-.image go-by-example/images/morning-coffee-3x.gif _ 300
+- Programming in Go since go1.4 ~ 3 years
+.image go-by-example/images/morning-coffee-3x.gif _ 200
 
 * Goal of this talk
 
@@ -39,7 +40,7 @@ To show you:
 - Fast, focused in concurrency & performance
 - Good learning curve, ridiculous simply
 - It works on all OS
-- Strong typed
+- Statically typed
 - Source code writed in Go
 - Awesome std lib & lots of tools
 - Fast cross-compilation to machine code

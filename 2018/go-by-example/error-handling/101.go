@@ -14,8 +14,8 @@ func main() {
 }
 
 type User struct {
-	ID   int    `json:"-"`
-	Name string `json:"name,omitempty"`
+	ID   int    `json:"id,omitempty"`
+	Name string `json:"name"`
 	Age  int32  `json:"age"`
 }
 
