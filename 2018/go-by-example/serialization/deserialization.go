@@ -3,24 +3,32 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
 )
 
 // START OMIT
 
-type Product struct {
-	ID     int      `json:"-"`
-	Name   string   `json:"name,omitempty"`
-	Colors []string `json:"colors"`
+type User struct {
+	ID   int    `json:"-"`
+	Name string `json:"name,omitempty"`
+	Age  int32  `json:"age"`
 }
 
 func main() {
-	myJSON := `{"name":"T-Shirt","colors":["Red","Yellow","Blue"]}`
-	product := &Product{}
-	err := json.Unmarshal([]byte(myJSON), product)
-	if err != nil {
-		fmt.Println("error:", err)
-	}
-	fmt.Printf("%v", product)
+	http.HandleFunc("/", Handler)
+	http.ListenAndServe(":8080", nil)
+}
+
+func Handler(w http.ResponseWriter, r *http.Request) {
+	user := User{}
+	json.Unmarshal(readBody(r), &user)
+	fmt.Fprintf(w, "Hello %s, your are %d years old! 👋", user.Name, user.Age)
 }
 
 // END OMIT
+
+func readBody(r *http.Request) []byte {
+	body, _ := ioutil.ReadAll(r.Body)
+	return body
+}

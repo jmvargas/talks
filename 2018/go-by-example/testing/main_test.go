@@ -8,35 +8,52 @@ import (
 )
 
 func TestHandler(t *testing.T) {
-	cases := []struct{ in, out string }{
-		{"jesusmanuel.vargas@privalia.com", "Hello jesusmanuel.vargas! 👋"},
-		{"foo.bar@other.com", "Sorry, I don't know you"},
+	body := strings.NewReader(`{"name":"Jesús","age":26}`)
+
+	req := httptest.NewRequest(
+		http.MethodPost,
+		"http://localhost:8080/",
+		body,
+	)
+
+	rec := httptest.NewRecorder()
+	Handler(rec, req)
+
+	if rec.Code != http.StatusOK {
+		t.Errorf("Unexpected status 200, got %d", rec.Code)
 	}
+	if !strings.Contains(rec.Body.String(), "Jesús, you can drink beer") {
+		t.Errorf("Unexpected body: %s", rec.Body.String())
+	}
+}
 
-	for _, c := range cases {
-		req, _ := http.NewRequest(
-			http.MethodGet,
-			"http://localhost:8080/"+c.in,
-			nil,
-		)
-		rec := httptest.NewRecorder()
-		Handler(rec, req)
+func TestHandlerFail(t *testing.T) {
+	body := strings.NewReader(`{"name":"Jesús","age":-1}`)
 
-		if rec.Code != http.StatusOK {
-			t.Errorf("Unexpected status 200, got %d", rec.Code)
-		}
-		if !strings.Contains(rec.Body.String(), c.out) {
-			t.Errorf("Unexpected body: %s", rec.Body.String())
-		}
+	req := httptest.NewRequest(
+		http.MethodPost,
+		"http://localhost:8080/",
+		body,
+	)
+	rec := httptest.NewRecorder()
+	Handler(rec, req)
+
+	if rec.Code != http.StatusBadRequest {
+		t.Errorf("Unexpected status 400, got %d", rec.Code)
+	}
+	if !strings.Contains(rec.Body.String(), "Error: age lower than zero") {
+		t.Errorf("Unexpected body: %s", rec.Body.String())
 	}
 }
 
 func BenchmarkHandler(b *testing.B) {
 	for i := 0; i <= b.N; i++ {
-		req, _ := http.NewRequest(
-			http.MethodGet,
-			"http://localhost:8080/jesusmanuel.vargas@privalia.com",
-			nil,
+		body := strings.NewReader(`{"name":"Jesús","age":26}`)
+
+		req := httptest.NewRequest(
+			http.MethodPost,
+			"http://localhost:8080/",
+			body,
 		)
 		rec := httptest.NewRecorder()
 		Handler(rec, req)
@@ -44,7 +61,7 @@ func BenchmarkHandler(b *testing.B) {
 		if rec.Code != http.StatusOK {
 			b.Errorf("Unexpected status 200, got %d", rec.Code)
 		}
-		if !strings.Contains(rec.Body.String(), "Hello jesusmanuel.vargas! 👋") {
+		if !strings.Contains(rec.Body.String(), "Jesús, you can drink beer") {
 			b.Errorf("Unexpected body: %s", rec.Body.String())
 		}
 	}

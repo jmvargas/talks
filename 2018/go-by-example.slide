@@ -17,7 +17,7 @@ And next visit [[http://localhost:3999][http://localhost:3999]]
 * Who I am?
 - Full stack developer, curious, always learning...
 - Interests: Go, Docker, PHP, Deep Learning, Performance, Microservices...
-- Sevillano, Andaluz
+- Sevillian, andalusian
 - In Privalia since one year
 .image go-by-example/images/morning-coffee-3x.gif _ 300
 
@@ -68,40 +68,19 @@ Please don't focus on syntax. Better keep with concepts.
 
 _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 
-* #2 Hello world HTTP server
-
-* Hello world HTTP server (without external libs)
-
-.play -edit go-by-example/hello-world-http/main.go
-
-* #3 Checks before compilation
+* #2 Checks before compilation
 
 * What about if you declare a var and you don't use it
 
 .play -edit go-by-example/checks-before/main.go
 
-* #4 Error handling
+* #3 Hello world HTTP server
 
-* Error handling
+* Hello world HTTP server
 
-.play -edit go-by-example/error-handling/main.go /START OMIT/,/END OMIT/
+.play -edit go-by-example/hello-world-http/main.go
 
-* #5 Testing
-
-* We have this server
-
-.play -edit go-by-example/testing/main.go
-
-* And we have these tests
-.code go-by-example/testing/main_test.go /^func TestHandler/,/^}/
-
-* #6 Benchmarks
-
-* Benchmarks: Pretty similar to tests
-
-.code go-by-example/testing/main_test.go /^func BenchmarkHandler/,/^}/
-
-* #7 Ridiculous minimal Docker images
+* #4 Ridiculous minimal Docker images
 
 * It plays well with Docker
 
@@ -109,27 +88,51 @@ _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 .code go-by-example/minimal-docker-images/build.sh
 .image go-by-example/images/hugging-docker.svg _ 180 
 
-* #8 Serialization/Deserialization
-
-* Serialization to JSON
-
-.play -edit go-by-example/serialization/serialization.go /START OMIT/,/END OMIT/
+* #5 Serialization/Deserialization
 
 * Deserialization from JSON
 
 .play -edit go-by-example/serialization/deserialization.go /START OMIT/,/END OMIT/
 
-* #9 Concurrency: Goroutines
+* Serialization to JSON
+
+.play -edit go-by-example/serialization/serialization.go /START OMIT/,/END OMIT/
+
+* #6 Error handling
+
+* Error handling
+
+.play -edit go-by-example/error-handling/101.go /START OMIT/,/END OMIT/
+
+* Error handling
+
+.play -edit go-by-example/error-handling/102.go /START OMIT/,/END OMIT/
+
+* Error handling
+
+.play -edit go-by-example/error-handling/103.go /START OMIT/,/END OMIT/
+
+* #7 Concurrency: Goroutines
+
+* Fun vs Fast
+
+.image go-by-example/images/funfast.svg _ 850
+.caption From _Go:_90%_Perfect,_100%_of_the_time,_Brad_Fitzpatrick_
+
+* Fun vs Concurrent
+
+.image go-by-example/images/concurrency.svg _ 850
+.caption From _Go:_90%_Perfect,_100%_of_the_time,_Brad_Fitzpatrick_
 
 * Hello world Goroutines
 
-.play -edit go-by-example/concurrency/101.go /START OMIT/,/END OMIT/
+.play -edit go-by-example/concurrency/101.go
 
 * Question: What happen if I click run?
 
 .play -edit go-by-example/concurrency/102.go
 
-* #10 Concurrency: Even better with channels
+* #8 Concurrency: Even better with channels
 
 * Diagram
 - Workers can't take the same job twice
@@ -138,6 +141,26 @@ _Couriosity:_Rob_Pike,_one_of_golang_co-creator_is_also_co-creator_of_UTF-8_
 * Worker-Job example: Channels & Goroutines allows concurrency
 
 .play -edit go-by-example/concurrency/103.go /START OMIT/,/END OMIT/
+
+* #9 Testing
+
+* We have this server
+
+.play -edit go-by-example/testing/main.go /START OMIT/,/END OMIT/
+
+* And we have these tests
+.code go-by-example/testing/main_test.go /^func TestHandler/,/^}/
+
+* And we have these tests
+.code go-by-example/testing/main_test.go /^func TestHandlerFail/,/^}/
+
+* #10 Benchmarks
+
+* Benchmarks: Pretty similar to tests
+
+.code go-by-example/testing/main_test.go /^func BenchmarkHandler/,/^}/
+
+
 
 * What's next?
 

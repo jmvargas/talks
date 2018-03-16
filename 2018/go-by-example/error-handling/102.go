@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
 	"io/ioutil"
@@ -29,8 +28,7 @@ func (u *User) canDrinkBeer() (bool, error) {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	user := User{}
-	json.Unmarshal(readBody(r), &user)
+	user := User{ID: 1, Name: "Jesús", Age: 26}
 
 	canDrinkBeer, err := user.canDrinkBeer()
 	if err != nil {
