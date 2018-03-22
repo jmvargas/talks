@@ -61,7 +61,7 @@ I'll try to avoid any external library.
 
 Please don't focus on syntax. Better keep with concepts.
 
-* #1 Do you ever deal with many string encoding formats?
+* #1 Hello world
 
 * Go is UTF-8 by default
 

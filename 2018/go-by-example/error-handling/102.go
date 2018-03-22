@@ -15,7 +15,7 @@ func main() {
 type User struct {
 	Id   int    `json:"id,omitempty"`
 	Name string `json:"name"`
-	Age  int32  `json:"age"`
+	Age  int  `json:"age"`
 }
 
 // START OMIT
