@@ -1,0 +1,96 @@
+Intro to Docker I
+12 November 2018
+Tags: docker container image
+
+Jesús Manuel Vargas
+Catalog & Search team, Privalia
+
+* What is Docker?
+
+* What is Docker?
+
+It's a way to develop, deploy, and run applications with containers
+
+The final view is to have you app packaged to run everywhere
+
+* We have VMs already for it, why we don't use them?
+
+It has advantages.
+
+- Better memory management. VMs has fixed assigned memory, docker use the required memory that the app need.
+
+- Docker executes your apps natively, it doesn't emulate your hardware. So it's more performant.
+
+* Docker concepts
+
+* Dockerfile
+
+It is a set of instructions to build docker images. They're used to build docker images.
+
+.code intro-to-docker-i/dockerfile-first/Dockerfile
+
+We will see them more in detail after
+
+* Docker images
+
+They're like molds for docker containers. 
+
+.image intro-to-docker-i/asset/mold.jpg 300 _
+
+Ex. You can have a docker image for your app but run two instances of your app.
+
+These instances are called containers.
+
+* Docker images: naming / tags
+
+.image intro-to-docker-i/asset/exampleimage.png 400 _
+
+An example of a docker image could be a *mysql:5.7*
+
+* Docker images
+
+.image intro-to-docker-i/asset/dockerimages.png 550 _
+
+* Docker containers
+
+They're more like cakes (a joke)
+ 
+.image intro-to-docker-i/asset/cake.jpg 400 _
+
+* Docker containers (seriously)
+
+They are instances of your apps.
+
+They can be running, stopped or killed (removed)
+
+.image intro-to-docker-i/asset/dockerps.png 100 _
+
+*IMPORTANT* If you kill your container, data inside is lost
+
+* Dockerfile syntax
+
+*FROM* is the base docker image you use to build the yours. Images are layered, so intructions are inherited
+
+*RUN* used to execute a command
+
+*ADD*, *COPY* used to add external files to the image
+
+*ENTRYPOINT*, *CMD* used to set up the firt command that will run your docker container
+
+*VOLUME* used to mount read-only or read-write folders
+
+*EXPOSE* used to indicate which port(s) will listen this container
+
+See more here https://docs.docker.com/engine/reference/builder/
+
+* DEMO: Run a docker container
+
+    docker run -p 80:80 --rm --name my-apache-php-app -v "$PWD":/var/www/html php:7.2-apache
+
+Notes for presenter: Volumes, daemon mode, container name
+
+* DEMO: Build a docker image
+
+    docker build -t helloworld .
+    docker run -p 80:80 --rm --name my-apache-php-app -v "$PWD":/var/www/html php:7.2-apache
+
